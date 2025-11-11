@@ -11,7 +11,17 @@ sudo apt install gcc
 
 ## Usage
 
-We assembly our code like:
+We assemble our initial source file like:
 ```
 as asem.s -o asem.o
+```
+
+We then run gcc(alternatively we could use the dedicated linker) against the intermediate object file to generate an executable: 
+```
+gcc -o asem asem.o -nostdlib -static
+```
+
+Now we can execute our resulting binary: 
+```
+./asem
 ```
